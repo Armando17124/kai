@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bobfiqh3sob1r"]
+
+[ext_resource type="Texture2D" uid="uid://bhgaj4r4jyht2" path="res://Menú Principal.png" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://bxnlolhdwpx1o" path="res://main_menu.gd" id="1_7vrkn"]
+
+[node name="MainMenu" type="Control" unique_id=1878947821]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7vrkn")
+
+[node name="Fondo" type="TextureRect" parent="." unique_id=1403125860]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_06t4h")
+expand_mode = 1
+
+[node name="ContenedorBotones" type="VBoxContainer" parent="." unique_id=723245978]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.017
+anchor_bottom = 0.031000001
+offset_left = 453.0
+offset_top = 340.0
+offset_right = 473.416
+offset_bottom = 373.912
+scale = Vector2(6.235753, 3.8112364)
+theme_override_constants/separation = 15
+
+[node name="BotonJugar" type="Button" parent="ContenedorBotones" unique_id=251628317]
+layout_mode = 2
+
+[node name="ButtonOpciones" type="Button" parent="ContenedorBotones" unique_id=430463337]
+layout_mode = 2
+
+[node name="ButtonSalir" type="Button" parent="ContenedorBotones" unique_id=1361356558]
+layout_mode = 2
+
+[connection signal="pressed" from="ContenedorBotones/BotonJugar" to="." method="_on_boton_jugar_pressed"]
+[connection signal="pressed" from="ContenedorBotones/ButtonOpciones" to="." method="_on_button_opciones_pressed"]
+[connection signal="pressed" from="ContenedorBotones/ButtonSalir" to="." method="_on_button_salir_pressed"]
