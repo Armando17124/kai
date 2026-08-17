@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dblol3yrb0s1y"]
+
+[ext_resource type="Script" uid="uid://d35llr1c5atvl" path="res://character_body_3d.gd" id="1_fb3t6"]
+[ext_resource type="PackedScene" uid="uid://cjj4vv27ssunp" path="res://personaje/caminar.fbx" id="2_vd578"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4cxnk"]
+radius = 3.0634766
+height = 9.316956
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1747722121]
+script = ExtResource("1_fb3t6")
+
+[node name="caminar" parent="." unique_id=1921524423 instance=ExtResource("2_vd578")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19312, 0, 0.31246638)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=714986129]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38253117, 5.212345, 0.0012025833)
+shape = SubResource("CapsuleShape3D_4cxnk")
