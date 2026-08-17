@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cqspuapp5mms1"]
 
 [ext_resource type="Script" uid="uid://dhtp8q8omf5mj" path="res://jugador_prueba.gd" id="1_16k11"]
+[ext_resource type="PackedScene" uid="uid://dn0bwve7ykahv" path="res://personaje/brinco gato.glb" id="2_omvyu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_16k11"]
 height = 2.1569824
@@ -10,12 +11,16 @@ height = 2.1569824
 [node name="Jugador" type="CharacterBody3D" unique_id=454186373 groups=["jugador"]]
 script = ExtResource("1_16k11")
 
+[node name="brinco gato" parent="." unique_id=23535729 instance=ExtResource("2_omvyu")]
+transform = Transform3D(-0.16252196, 0, -0.0005095554, 0, 0.16252275, 0, 0.0005095554, 0, -0.16252196, 0, -0.32286882, 0)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=489117874]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6065674, 0)
 shape = SubResource("CapsuleShape3D_16k11")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=824725562]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6111543, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_rkmpe")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2117879399]
