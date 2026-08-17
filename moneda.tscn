@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c2iuv33y268pe"]
+
+[ext_resource type="PackedScene" uid="uid://cjfjst52kdpfn" path="res://assets/stylized_handpainted_low-poly_gold_coin.glb" id="1_r4iok"]
+[ext_resource type="Script" uid="uid://d3cptrdcck56x" path="res://area_3d.gd" id="2_3fws3"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_eojtp"]
+
+[node name="Sketchfab_Scene" unique_id=1330603862 instance=ExtResource("1_r4iok")]
+
+[node name="Area3D" type="Area3D" parent="." index="1" unique_id=1670305353]
+script = ExtResource("2_3fws3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=817219048]
+shape = SubResource("CylinderShape3D_eojtp")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

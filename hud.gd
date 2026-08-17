@@ -1,30 +1,48 @@
 extends CanvasLayer
 
-@onready var label = $UI_Container/TopLeft/HBoxContainer/Label
-@onready var label_oro = $UI_Container/TopRight/HBoxContainer/Label
-@onready var label_gemas = $UI_Container/TopRight/HBoxContainer/Label2
+@onready var label_tiempo: Label = $UI_Container/TopLeft/HBoxContainer/Label
+@onready var label_oro: Label = $UI_Container/TopRight/HBoxContainer/Label
+@onready var label_gemas: Label = $UI_Container/TopRight/HBoxContainer/Label2
 
 var tiempo_restante: float = 150.0 # 2 minutos y 30 segundos
 var oro: int = 0
 var gemas: int = 0
+var tiempo_agotado: bool = false
 
-func _process(delta):
+func _ready() -> void:
+	# Asegura que el HUD se registre en el grupo para llamarlo fácilmente desde los coleccionables
+	add_to_group("HUD")
+	
+	# Inicializa los textos en pantalla
+	actualizar_reloj()
+	label_oro.text = str(oro)
+	label_gemas.text = str(gemas)
+
+func _process(delta: float) -> void:
 	if tiempo_restante > 0:
 		tiempo_restante -= delta
-		#actualizar_reloj()
-	else:
+		actualizar_reloj()
+	elif not tiempo_agotado:
 		tiempo_restante = 0
-		# Aquí puedes llamar a una función de Game Over o Fin de Tiempo
+		tiempo_agotado = true
+		actualizar_reloj()
+		_on_tiempo_finalizado()
 
-#func actualizar_reloj(): 
-	#var minutos = int(tiempo_restante) / 60
-	#var segundos = int(tiempo_restante) % 60
-	#label.text = "" % [minutos, segundos]
+func actualizar_reloj() -> void: 
+	var total_segundos: int = int(tiempo_restante)
+	var minutos: int = total_segundos / 60
+	var segundos: int = total_segundos % 60
+	label_tiempo.text = "%02d:%02d" % [minutos, segundos]
 
-func actualizar_oro(cantidad: int):
-	oro = cantidad
+func sumar_oro(cantidad: int) -> void:
+	oro += cantidad
 	label_oro.text = str(oro)
 
-func actualizar_gemas(cantidad: int):
-	gemas = cantidad
+func sumar_gemas(cantidad: int) -> void:
+	gemas += cantidad
 	label_gemas.text = str(gemas)
+
+func _on_tiempo_finalizado() -> void:
+	print("¡Se acabó el tiempo!")
+	# Aquí puedes pausar el juego o instanciar la pantalla de Game Over
+	# get_tree().paused = true

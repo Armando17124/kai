@@ -18,8 +18,8 @@ grow_vertical = 2
 
 [node name="TopLeft" type="MarginContainer" parent="UI_Container" unique_id=513287218]
 layout_mode = 1
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 463.0
+offset_bottom = 95.0
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 
@@ -34,7 +34,7 @@ stretch_mode = 4
 [node name="Label" type="Label" parent="UI_Container/TopLeft/HBoxContainer" unique_id=624506568]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 2
-text = "Tiempo Restante: 3:00"
+text = "Tiempo: 00:00"
 
 [node name="TopRight" type="MarginContainer" parent="UI_Container" unique_id=2001688297]
 layout_mode = 1
@@ -58,7 +58,7 @@ stretch_mode = 4
 
 [node name="Label" type="Label" parent="UI_Container/TopRight/HBoxContainer" unique_id=2003515674]
 layout_mode = 2
-text = "Oro:45"
+text = "Oro:0"
 
 [node name="TextureRect2" type="TextureRect" parent="UI_Container/TopRight/HBoxContainer" unique_id=436042399]
 layout_mode = 2
@@ -67,4 +67,7 @@ stretch_mode = 4
 
 [node name="Label2" type="Label" parent="UI_Container/TopRight/HBoxContainer" unique_id=23042604]
 layout_mode = 2
-text = "Gemas:15"
+text = "Gemas:0"
+
+[node name="Timer" type="Timer" parent="." unique_id=1491815957]
+autostart = true
