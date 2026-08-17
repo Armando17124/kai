@@ -1,0 +1,9 @@
+# Archivos temporales de Godot 4.x
+.godot/
+
+# Archivos temporales de Godot 3.x
+.import/
+export_preset.cfg
+
+# Archivos de configuración del usuario
+*.uid
