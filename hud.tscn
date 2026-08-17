@@ -23,50 +23,75 @@ offset_bottom = 95.0
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI_Container/TopLeft" unique_id=2044320138]
+[node name="contenedortiempo" type="Control" parent="UI_Container/TopLeft" unique_id=1009599688]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="UI_Container/TopLeft/HBoxContainer" unique_id=683275860]
-layout_mode = 2
+[node name="TextureRect" type="TextureRect" parent="UI_Container/TopLeft/contenedortiempo" unique_id=683275860]
+layout_mode = 0
+offset_right = 443.0
+offset_bottom = 75.0
 texture = ExtResource("2_a2258")
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="UI_Container/TopLeft/HBoxContainer" unique_id=624506568]
+[node name="LabelTiempo" type="Label" parent="UI_Container/TopLeft/contenedortiempo" unique_id=624506568]
+unique_name_in_owner = true
 modulate = Color(0, 0, 0, 1)
-layout_mode = 2
+layout_mode = 0
+offset_left = 83.0
+offset_top = 23.0
+offset_right = 297.0
+offset_bottom = 46.0
 text = "Tiempo: 00:00"
 
 [node name="TopRight" type="MarginContainer" parent="UI_Container" unique_id=2001688297]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -373.0
-offset_right = -163.0
-offset_bottom = 89.0
-grow_horizontal = 0
+layout_mode = 0
+offset_left = 731.055
+offset_right = 751.05505
+offset_bottom = 20.0
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI_Container/TopRight" unique_id=2003658386]
+[node name="contenedoritems" type="Control" parent="UI_Container/TopRight" unique_id=993404253]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="UI_Container/TopRight/HBoxContainer" unique_id=1896117318]
-layout_mode = 2
+[node name="TextureRect" type="TextureRect" parent="UI_Container/TopRight/contenedoritems" unique_id=1896117318]
+layout_mode = 0
+offset_right = 186.0
+offset_bottom = 69.0
 texture = ExtResource("3_1xsix")
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="UI_Container/TopRight/HBoxContainer" unique_id=2003515674]
-layout_mode = 2
+[node name="LabelOro" type="Label" parent="UI_Container/TopRight/contenedoritems" unique_id=2003515674]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 78.08
+offset_top = 25.64
+offset_right = 121.080055
+offset_bottom = 48.64
+grow_horizontal = 2
+grow_vertical = 2
 text = "Oro:0"
 
-[node name="TextureRect2" type="TextureRect" parent="UI_Container/TopRight/HBoxContainer" unique_id=436042399]
-layout_mode = 2
+[node name="TextureRect2" type="TextureRect" parent="UI_Container/TopRight/contenedoritems" unique_id=436042399]
+layout_mode = 0
+offset_left = 237.0
+offset_right = 403.0
+offset_bottom = 69.0
 texture = ExtResource("4_rftc2")
 stretch_mode = 4
 
-[node name="Label2" type="Label" parent="UI_Container/TopRight/HBoxContainer" unique_id=23042604]
-layout_mode = 2
+[node name="LabelGemas" type="Label" parent="UI_Container/TopRight/contenedoritems" unique_id=23042604]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 290.745
+offset_top = 21.165
+offset_right = 357.7451
+offset_bottom = 44.16504
 text = "Gemas:0"
 
 [node name="Timer" type="Timer" parent="." unique_id=1491815957]

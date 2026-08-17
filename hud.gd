@@ -1,8 +1,8 @@
 extends CanvasLayer
 
-@onready var label_tiempo: Label = $UI_Container/TopLeft/HBoxContainer/Label
-@onready var label_oro: Label = $UI_Container/TopRight/HBoxContainer/Label
-@onready var label_gemas: Label = $UI_Container/TopRight/HBoxContainer/Label2
+@onready var label_tiempo = %LabelTiempo
+@onready var label_oro = %LabelOro
+@onready var label_gemas = %LabelGemas
 
 var tiempo_restante: float = 150.0 # 2 minutos y 30 segundos
 var oro: int = 0
@@ -28,11 +28,13 @@ func _process(delta: float) -> void:
 		actualizar_reloj()
 		_on_tiempo_finalizado()
 
-func actualizar_reloj() -> void: 
+func actualizar_reloj() -> void:
 	var total_segundos: int = int(tiempo_restante)
 	var minutos: int = total_segundos / 60
 	var segundos: int = total_segundos % 60
-	label_tiempo.text = "%02d:%02d" % [minutos, segundos]
+	
+	# Agrega "Tiempo: " antes del formato numérico
+	label_tiempo.text = "Tiempo: %02d:%02d" % [minutos, segundos]
 
 func sumar_oro(cantidad: int) -> void:
 	oro += cantidad

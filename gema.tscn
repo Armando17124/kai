@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dbxcp02cmn6ys"]
+
+[ext_resource type="PackedScene" uid="uid://rsmw0muc7lvk" path="res://assets/glowing_gem.glb" id="1_k48bk"]
+[ext_resource type="Script" uid="uid://dc5l32on6ehgp" path="res://area_3dgema.gd" id="2_0bffb"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_74o08"]
+radius = 0.15608682
+
+[node name="Sketchfab_Scene" unique_id=709419400 instance=ExtResource("1_k48bk")]
+
+[node name="Sketchfab_model" parent="." index="0" unique_id=498127554]
+transform = Transform3D(0.0010796139, 0, 0, 0, -4.7191424e-11, 0.0010796139, 0, -0.0010796139, -4.7191424e-11, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="." index="1" unique_id=933993064]
+script = ExtResource("2_0bffb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=1985081410]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005940184, 0.15664515, 0)
+shape = SubResource("SphereShape3D_74o08")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
