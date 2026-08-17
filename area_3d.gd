@@ -13,5 +13,17 @@ func _on_body_entered(body: Node3D) -> void:
 			elif tipo == TipoRecurso.GEMA:
 				hud.sumar_gemas(valor)
 		
-		# Elimina la moneda completa del juego
+		# 1. Ocultar la gema/moneda visualmente al instante
+		visible = false
+		
+		# 2. Desactivar la colisión para no recolectarla dos veces
+		if has_node("CollisionShape3D"):
+			$CollisionShape3D.set_deferred("disabled", true)
+		
+		# 3. Reproducir sonido y esperar a que termine
+		if has_node("SonidoTomar"):
+			$SonidoTomar.play()
+			await $SonidoTomar.finished
+		
+		# 4. Eliminar el objeto completo
 		get_parent().queue_free()

@@ -8,5 +8,17 @@ func _on_body_entered(body: Node3D) -> void:
 		if hud:
 			hud.sumar_gemas(valor)
 		
-		# Elimina la gema completa de la escena
+		# 1. Ocultar la gema visualmente al instante
+		visible = false
+		
+		# 2. Desactivar la colisión para evitar recolección doble
+		if has_node("CollisionShape3D"):
+			$CollisionShape3D.set_deferred("disabled", true)
+		
+		# 3. Reproducir sonido y esperar a que termine
+		if has_node("SonidoTomar"):
+			$SonidoTomar.play()
+			await $SonidoTomar.finished
+		
+		# 4. Eliminar el objeto completo de la escena
 		get_parent().queue_free()

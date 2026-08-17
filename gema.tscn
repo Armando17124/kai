@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://rsmw0muc7lvk" path="res://assets/glowing_gem.glb" id="1_k48bk"]
 [ext_resource type="Script" uid="uid://dc5l32on6ehgp" path="res://area_3dgema.gd" id="2_0bffb"]
+[ext_resource type="AudioStream" uid="uid://c6k867yy63cq6" path="res://gem-gather-stereo.wav" id="3_0bffb"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_74o08"]
 radius = 0.15608682
@@ -17,5 +18,9 @@ script = ExtResource("2_0bffb")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=1985081410]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005940184, 0.15664515, 0)
 shape = SubResource("SphereShape3D_74o08")
+
+[node name="SonidoTomar" type="AudioStreamPlayer3D" parent="Area3D" index="1" unique_id=1341698421]
+stream = ExtResource("3_0bffb")
+volume_db = 14.953
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
