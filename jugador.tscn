@@ -8,6 +8,28 @@ height = 2.1569824
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_rkmpe"]
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_560fu"]
+emission_shape = 3
+emission_box_extents = Vector3(3, 1, 2)
+initial_velocity_max = 1.0
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = 7.7399836
+gravity = Vector3(0, 2, 0)
+turbulence_enabled = true
+turbulence_noise_scale = 5.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ouo6w"]
+transparency = 1
+albedo_color = Color(0.79449075, 0.6119328, 0.1545732, 1)
+emission_enabled = true
+emission = Color(0.95375186, 0.7662534, 0.39362067, 1)
+emission_energy_multiplier = 11.85
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_bgro3"]
+material = SubResource("StandardMaterial3D_ouo6w")
+size = Vector2(0.008, 0.008)
+
 [node name="Jugador" type="CharacterBody3D" unique_id=454186373 groups=["jugador"]]
 script = ExtResource("1_16k11")
 
@@ -26,3 +48,11 @@ mesh = SubResource("CapsuleMesh_rkmpe")
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2117879399]
 transform = Transform3D(1, 0, 0, 0, 0.9547187, 0.29750997, 0, -0.29750997, 0.9547187, 0, 1.9451181, 2.5156176)
 current = true
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Camera3D" unique_id=846594439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0086712, -3.2368567)
+amount = 200
+lifetime = 10.0
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_560fu")
+draw_pass_1 = SubResource("QuadMesh_bgro3")
