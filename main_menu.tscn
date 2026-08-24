@@ -14,8 +14,8 @@ script = ExtResource("1_7vrkn")
 
 [node name="Fondo" type="TextureRect" parent="." unique_id=1403125860]
 layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 1277.0
+offset_bottom = 712.0
 texture = ExtResource("1_06t4h")
 expand_mode = 1
 
@@ -24,11 +24,13 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.017
 anchor_bottom = 0.031000001
-offset_left = 453.0
-offset_top = 340.0
-offset_right = 473.416
-offset_bottom = 373.912
-scale = Vector2(6.235753, 3.8112364)
+offset_left = 523.48
+offset_top = 375.0
+offset_right = 537.4215
+offset_bottom = 419.497
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(6.821, 4.162)
 theme_override_constants/separation = 15
 
 [node name="BotonJugar" type="Button" parent="ContenedorBotones" unique_id=251628317]
